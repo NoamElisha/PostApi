@@ -15,6 +15,8 @@ app.use(express.json());
 
 
 // Define Routes
+const postsRoutes = require('./routes/postsRoutes');
+app.use('/posts', postsRoutes);
 
 
 app.listen(port, ()=>{
