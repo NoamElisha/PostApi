@@ -11,3 +11,17 @@ Content-Type: application/json
 
 ### Get all posts
 GET http://localhost:4000/posts
+
+### Get all posts by sender
+GET http://localhost:4000/posts?sender=Alice
+
+### Get a specific post by ID
+GET http://localhost:4000/posts/693df77ca79d1de50c7f4b2a
+
+### Update a post by ID
+PUT http://localhost:4000/posts/693df77ca79d1de50c7f4b2a
+Content-Type: application/json
+
+{
+    "content": "This is another updated content of my first post."
+}
