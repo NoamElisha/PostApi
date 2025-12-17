@@ -1,5 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const commentsRoutes = require('./routes/commentsRoutes');
+const commentsController = require('./controllers/commentsController');
+const postsRoutes = require('./routes/postsRoutes');
+
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -14,8 +19,9 @@ db.once("open", ()=> {
 app.use(express.json());
 
 
-const postsRoutes = require('./routes/postsRoutes');
+app.get('/posts/:postId/comments', commentsController.getCommentsByPostId);
 app.use('/posts', postsRoutes);
+app.use('/comments', commentsRoutes);
 
 
 app.listen(port, ()=>{
