@@ -1,7 +1,6 @@
 const postsModel = require('../model/postsModel');
-//const post = require('../model/postsModel');
 
-// Create a new post
+
 const createPost = async (req, res) => {
     const obj = req.body;
     try {
@@ -12,7 +11,6 @@ const createPost = async (req, res) => {
     }
 };
 
-// Get all posts
 const getAllPosts = async (req, res) => {
     try {
         const sender = req.query.sender;
@@ -28,7 +26,6 @@ const getAllPosts = async (req, res) => {
     }  
 };
 
-// Get post by ID
 const getPostById = async (req, res) => {
     const postId = req.params.id;
     console.log("Fetching post with ID:", postId);
@@ -43,7 +40,6 @@ const getPostById = async (req, res) => {
     }
 };
 
-// Update post by ID
 const updatePostById = async (req, res) => {
     const postId = req.params.id;
     const updateData = req.body;
