@@ -54,6 +54,7 @@ const updatePostById = async (req, res) => {
     }
 };
 
+
 module.exports = {
     createPost,
     getAllPosts,

@@ -1,27 +1,68 @@
-### API tests
+
+
+### Get all posts
+
+GET http://localhost:4000/posts
+
+### Get a single post by ID
+
+GET http://localhost:4000/posts/696d3638dbf746ce23455ce6
+
+### Create a new post
 
 POST http://localhost:4000/posts
 Content-Type: application/json
 
 {
-    "content": "This is the content of my first post.",
-    "sender": "Alice"
+    "content": "This is a sample post.",
+    "sender": "User123"
 }
 
+### Update a post by ID
 
-
-GET http://localhost:4000/posts
-
-
-GET http://localhost:4000/posts?sender=Alice
-
-
-GET http://localhost:4000/posts/693df77ca79d1de50c7f4b2a
-
-
-PUT http://localhost:4000/posts/693df77ca79d1de50c7f4b2a
+PUT http://localhost:4000/posts/696d3bf4fa9804fa055f7b43
 Content-Type: application/json
 
 {
-    "content": "This is another updated content of my first post."
+    "content": "Updated post content.",
+    "sender": "User123"
 }
+
+
+### Get all comments
+
+GET http://localhost:4000/comments
+
+### Get a single comment by ID
+
+GET http://localhost:4000/comments/696d3c7cfa9804fa055f7b49
+
+### Create a new comment
+
+POST http://localhost:4000/comments
+Content-Type: application/json
+
+{
+    "postId": "696d3bf4fa9804fa055f7b43",
+    "content": "This is a comment.",
+    "sender": "Commenter1"
+}
+
+### Update a comment by ID
+
+PUT http://localhost:4000/comments/696d3c7cfa9804fa055f7b49
+Content-Type: application/json
+
+{
+    "content": "Updated comment content.",
+    "sender": "Commenter1"
+}
+
+### Delete a comment by ID
+
+DELETE http://localhost:4000/comments/696d3c7cfa9804fa055f7b49
+
+
+### Delete a comment by ID
+
+DELETE http://localhost:4000/comments/1
